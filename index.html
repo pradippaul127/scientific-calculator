@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Controls -->
+    <nav class="top-controls">
+        <button id="calc-theme-toggle" class="control-btn" type="button">🌙</button>
+        <button id="calc-mode-toggle" class="control-btn" type="button">🔬</button>
+        <button id="angle-mode-toggle" class="control-btn" type="button">DEG</button>
+    </nav>
+
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="display">
+                <div class="mode-indicators">
+                    <span id="angleMode">DEG</span>
+                    <span id="memoryCount"></span>
+                </div>
+                <input type="text" id="expression" readonly placeholder="0">
+                <input type="text" id="result" readonly placeholder="0">
+                <div id="errorDisplay"></div>
+            </div>
+            <div class="memory-display">
+                <span id="memoryIndicator">M</span>
+                <div class="memory-slots">
+                    <button class="memory-slot" id="M1">M1</button>
+                    <button class="memory-slot" id="M2">M2</button>
+                    <button class="memory-slot" id="M3">M3</button>
+                </div>
+            </div>
+            <div class="buttons">
+                <!-- Advanced Scientific Functions -->
+                <button class="scientific" type="button">asin</button>
+                <button class="scientific" type="button">acos</button>
+                <button class="scientific" type="button">atan</button>
+                <button class="scientific" type="button">|x|</button>
+
+                <button class="scientific" type="button">sinh</button>
+                <button class="scientific" type="button">cosh</button>
+                <button class="scientific" type="button">tanh</button>
+                <button class="scientific" type="button">rnd</button>
+
+                <!-- Basic Scientific Functions -->
+                <button class="scientific" type="button">sin</button>
+                <button class="scientific" type="button">cos</button>
+                <button class="scientific" type="button">tan</button>
+                <button class="scientific" type="button">π</button>
+                
+                <button class="scientific" type="button">log</button>
+                <button class="scientific" type="button">ln</button>
+                <button class="scientific" type="button">!</button>
+                <button class="scientific" type="button">e</button>
+                
+                <!-- Memory Functions -->
+                <button class="memory" type="button">MC</button>
+                <button class="memory" type="button">MR</button>
+                <button class="memory" type="button">M+</button>
+                <button class="memory" type="button">M-</button>
+                
+                <!-- Brackets and Functions -->
+                <button class="scientific" type="button">(</button>
+                <button class="scientific" type="button">)</button>
+                <button class="scientific" type="button">√</button>
+                <button class="operator" type="button">÷</button>
+                
+                <button class="scientific" type="button">⌊x⌋</button>
+                <button class="scientific" type="button">⌈x⌉</button>
+                <button class="scientific" type="button">xʸ</button>
+                <button class="scientific" type="button">x²</button>
+                
+                <button class="clear" type="button">C</button>
+                <button class="operator" type="button">±</button>
+                <button class="operator" type="button">%</button>
+                <button class="operator" type="button">×</button>
+                
+                <button class="number" type="button">7</button>
+                <button class="number" type="button">8</button>
+                <button class="number" type="button">9</button>
+                <button class="operator" type="button">-</button>
+                
+                <button class="number" type="button">4</button>
+                <button class="number" type="button">5</button>
+                <button class="number" type="button">6</button>
+                <button class="operator" type="button">+</button>
+                
+                <button class="number" type="button">1</button>
+                <button class="number" type="button">2</button>
+                <button class="number" type="button">3</button>
+                <button class="equals" type="button">=</button>
+                
+                <button class="number zero" type="button">0</button>
+                <button class="number" type="button">.</button>
+                <button class="copy" type="button">📋</button>
+            </div>
+            
+            <!-- Conversion Panel -->
+            <div class="conversion-panel">
+                <select id="conversionType">
+                    <option value="none">No Conversion</option>
+                    <option value="length">Length</option>
+                    <option value="weight">Weight</option>
+                    <option value="temperature">Temperature</option>
+                    <option value="angle">Angle</option>
+                    <option value="time">Time</option>
+                </select>
+                <div id="conversionInputs" class="hidden">
+                    <input type="number" id="fromValue" placeholder="Value">
+                    <select id="fromUnit"></select>
+                    <select id="toUnit"></select>
+                    <button id="convert" type="button">Convert</button>
+                </div>
+                <div id="conversionResult"></div>
+            </div>
+        </div>
+        <div class="side-panel">
+            <div class="history-panel">
+                <h3>History</h3>
+                <div id="historyList"></div>
+                <button id="clearHistory" type="button">Clear History</button>
+            </div>
+            <div class="memory-panel">
+                <h3>Memory History</h3>
+                <div id="memoryList"></div>
+                <button id="clearAllMemory" type="button">Clear All Memory</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
